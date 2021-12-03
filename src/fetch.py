@@ -12,7 +12,7 @@ OUTPUTS = {
         {"key": "tcell_ids", "table": "tcell_search", "id": "tcell_id"},
         {"key": "structure_ids", "table": "epitope_search", "id": "structure_id"},
     ],
-    "bcell": [{"key": "bcell_ids", "table": "bcell_serach", "id": "bcell_id"}],
+    "bcell": [{"key": "bcell_ids", "table": "bcell_search", "id": "bcell_id"}],
     "mhc": [{"key": "elution_ids", "table": "mhc_search", "id": "elution_id"}],
     "tcr": [
         {"key": "tcr_receptor_group_ids", "table": "tcr_search", "id": "receptor_group_id"},
@@ -45,6 +45,7 @@ def main():
                 if file not in outputs:
                     outputs[file] = list()
                 table = sd["table"]
+
                 id_field = sd["id"]
                 logging.info("Querying " + table)
 
