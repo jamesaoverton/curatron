@@ -1,0 +1,12 @@
+table	path	description	type
+table	table.tsv	All of the user-editable tables in this project.	table
+column	column.tsv	Columns for all of the tables.	column
+datatype	datatype.tsv	Datatypes for all of the columns	datatype
+prefix	prefix.tsv	Prefixes and source ontologies.	
+reference	reference.tsv	Terms imported from other ontologies	
+epitope	epitope.tsv		
+tcell	tcell.tsv		
+bcell	bcell.tsv		
+mhc	mhc.tsv		
+tcr	tcr.tsv		
+bcr	bcr.tsv		

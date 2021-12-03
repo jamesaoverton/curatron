@@ -1,0 +1,21 @@
+datatype	parent	transform	condition	structure	description	SQL type	RDF type	HTML type
+text					any text	TEXT	xsd:string	textarea
+empty	text		equals('')		the empty string	NULL	null	
+trimmed_text	text		exclude(/^\s+|\s+$/)		text that does not begin or end with whitespace			
+description	trimmed_text				a brief description			
+line	text		exclude(/\n/)		a line of text			input
+datatype_condition	line				a datatype condition specification			
+path	line				a path to a file			
+trimmed_line	line		exclude(/^\s+|\s+$/)		a line of text that does not begin or end with whitespace			
+label	trimmed_line							
+column_name	trimmed_line				a column name			
+nonspace	trimmed_line		exclude(/\s/)		text without whitespace			
+IRI	nonspace				an Internationalized Resource Identifier		IRI	
+word	nonspace		match(/\w+/)		a single word: letters, numbers, underscore			
+table_name	word				a table name			
+datatype_name	word				a datatype name			
+table_type	word	lowercase	in('table', 'column', 'datatype')		a table type			
+prefix	word				a prefix for a CURIE			
+suffix	word				a suffix for a CURIE			
+CURIE	word		search(/:/)	concat(prefix, ":", suffix)	a Compact URI		CURIE	
+integer	word		match(/\d+/)		a non-negative integer	INT	xsd:integer	
