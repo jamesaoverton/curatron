@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import json
 import logging
 import os
@@ -11,16 +13,12 @@ CHUNK_SIZE = 354
 
 # Output files and corresponding tables
 OUTPUTS = {
-    "tcell": [
-        {"key": "tcell_ids", "table": "tcell_search", "id": "tcell_id"},
-        {"key": "structure_ids", "table": "epitope_search", "id": "structure_id"},
-    ],
-    "bcell": [{"key": "bcell_ids", "table": "bcell_search", "id": "bcell_id"}],
-    "mhc": [{"key": "elution_ids", "table": "mhc_search", "id": "elution_id"}],
-    "tcr": [
-        {"key": "tcr_receptor_group_ids", "table": "tcr_search", "id": "receptor_group_id"},
-        {"key": "bcr_receptor_group_ids", "table": "bcr_search", "id": "receptor_group_id"},
-    ],
+    "epitope": {"key": "structure_ids", "table": "epitope_search", "id": "structure_id"},
+    "tcell": {"key": "tcell_ids", "table": "tcell_search", "id": "tcell_id"},
+    "bcell": {"key": "bcell_ids", "table": "bcell_search", "id": "bcell_id"},
+    "mhc": {"key": "elution_ids", "table": "mhc_search", "id": "elution_id"},
+    "tcr": {"key": "tcr_receptor_group_ids", "table": "tcr_search", "id": "receptor_group_id"},
+    "bcr": {"key": "bcr_receptor_group_ids", "table": "bcr_search", "id": "receptor_group_id"},
 }
 
 # API URL
@@ -44,25 +42,27 @@ def main():
         logging.info(f"Retrieving data for reference ID {ref_id}")
         r = requests.get(f"{QUERY_URL}/reference_search?reference_id=eq.{ref_id}")
         data = r.json()[0]
-        outputs = defaultdict(list)
-        for file, search_details in OUTPUTS.items():
-            for sd in search_details:
-                ids = data[sd["key"]]
-                if not ids:
-                    continue
-                if file not in outputs:
-                    outputs[file] = list()
-                table = sd["table"]
-                id_field = sd["id"]
-                logging.info("Querying " + table)
+        with open(f"build/ref:{ref_id}/reference.json", "w") as f:
+            f.write(json.dumps(data, indent=4))
 
-                # Partition into sublists of max CHUNK_SIZE to prevent 502 error
-                chunks = [ids[x : x + CHUNK_SIZE] for x in range(0, len(ids), CHUNK_SIZE)]
-                for chunk in chunks:
-                    q = f"{QUERY_URL}/{table}?{id_field}=in.({','.join([str(x) for x in chunk])})"
-                    r = requests.get(q)
-                    table_data = r.json()
-                    outputs[file].extend(table_data)
+        outputs = defaultdict(list)
+        for file, sd in OUTPUTS.items():
+            ids = data[sd["key"]]
+            if not ids:
+                continue
+            if file not in outputs:
+                outputs[file] = list()
+            table = sd["table"]
+            id_field = sd["id"]
+            logging.info("Querying " + table)
+
+            # Partition into sublists of max CHUNK_SIZE to prevent 502 error
+            chunks = [ids[x : x + CHUNK_SIZE] for x in range(0, len(ids), CHUNK_SIZE)]
+            for chunk in chunks:
+                q = f"{QUERY_URL}/{table}?{id_field}=in.({','.join([str(x) for x in chunk])})"
+                r = requests.get(q)
+                table_data = r.json()
+                outputs[file].extend(table_data)
 
         if not os.path.exists(f"build/ref:{ref_id}"):
             os.makedirs(f"build/ref:{ref_id}")
