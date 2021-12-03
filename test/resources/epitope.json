@@ -1,0 +1,465 @@
+[
+  {
+    "structure_id": 234,
+    "structure_iri": "IEDB_EPITOPE:234",
+    "structure_descriptions": [
+      "AAISDYDYY"
+    ],
+    "curated_source_antigens": [
+      {
+        "accession": "P59641.2",
+        "name": "Replicase polyprotein 1ab",
+        "iri": "GENPEPT:P59641.2",
+        "starting_position": 4817,
+        "ending_position": 4825,
+        "source_organism_name": "SARS coronavirus Tor2 (Severe acute respiratory syndrome-related coronavirus Tor2)",
+        "source_organism_iri": "NCBITaxon:227984"
+      },
+      {
+        "accession": "YP_009724389.1",
+        "name": "orf1ab polyprotein [Severe acute respiratory syndrome coronavirus 2]",
+        "iri": "GENPEPT:YP_009724389.1",
+        "starting_position": 4840,
+        "ending_position": 4848,
+        "source_organism_name": "SARS-CoV2",
+        "source_organism_iri": "NCBITaxon:2697049"
+      }
+    ],
+    "structure_type": "Linear peptide",
+    "linear_sequence": "AAISDYDYY",
+    "e_modification": null,
+    "linear_sequence_length": 9,
+    "iedb_assay_ids": [
+      1025193,
+      1025194,
+      1025195,
+      1025196,
+      1025197,
+      12493165
+    ],
+    "iedb_assay_iris": [
+      "IEDB_ASSAY:1025193",
+      "IEDB_ASSAY:1025194",
+      "IEDB_ASSAY:1025195",
+      "IEDB_ASSAY:1025196",
+      "IEDB_ASSAY:1025197",
+      "IEDB_ASSAY:12493165"
+    ],
+    "reference_ids": [
+      1000425,
+      1037960
+    ],
+    "reference_iris": [
+      "IEDB_REFERENCE:1000425",
+      "IEDB_REFERENCE:1037960"
+    ],
+    "submission_ids": [
+      1000071
+    ],
+    "submission_iris": [
+      "IEDB_SUBMISSION:1000071"
+    ],
+    "pdb_ids": null,
+    "chebi_ids": null,
+    "qualitative_measures": [
+      "Negative",
+      "Positive",
+      "Positive-Low"
+    ],
+    "mhc_allele_evidences": [
+      "Single allele present"
+    ],
+    "antibody_isotypes": null,
+    "direct_ex_vivo_bool": 1,
+    "receptor_ids": null,
+    "receptor_group_ids": null,
+    "tcr_receptor_group_ids": null,
+    "bcr_receptor_group_ids": null,
+    "receptor_group_iris": null,
+    "tcr_receptor_group_iris": null,
+    "bcr_receptor_group_iris": null,
+    "receptor_types": null,
+    "receptor_names": null,
+    "receptor_chain1_types": null,
+    "receptor_chain2_types": null,
+    "receptor_chain1_full_seqs": null,
+    "receptor_chain2_full_seqs": null,
+    "receptor_chain1_cdr1_seqs": null,
+    "receptor_chain2_cdr1_seqs": null,
+    "receptor_chain1_cdr2_seqs": null,
+    "receptor_chain2_cdr2_seqs": null,
+    "receptor_chain1_cdr3_seqs": null,
+    "receptor_chain2_cdr3_seqs": null,
+    "host_organism_iri_search": [
+      "NCBITaxon:314295",
+      "NCBITaxon:40674",
+      "NCBITaxon:7742",
+      "NCBITaxon:9443",
+      "NCBITaxon:9606"
+    ],
+    "host_organism_iris": [
+      "NCBITaxon:9606"
+    ],
+    "host_organism_names": [
+      "Homo sapiens (human)"
+    ],
+    "source_organism_iri_search": [
+      "NCBITaxon:1",
+      "NCBITaxon:10239",
+      "NCBITaxon:11118",
+      "NCBITaxon:227984",
+      "NCBITaxon:2501931",
+      "NCBITaxon:2509511",
+      "NCBITaxon:2697049",
+      "NCBITaxon:694002",
+      "OBI:0100026"
+    ],
+    "source_organism_iris": [
+      "NCBITaxon:227984",
+      "NCBITaxon:2697049"
+    ],
+    "source_organism_names": [
+      "SARS coronavirus Tor2 (Severe acute respiratory syndrome-related coronavirus Tor2)",
+      "SARS-CoV2"
+    ],
+    "mhc_allele_iri_search": [
+      "GO:0032991",
+      "GO:0042611",
+      "MRO:0000011",
+      "MRO:0001005",
+      "MRO:0001006",
+      "MRO:0001026",
+      "MRO:0001029",
+      "MRO:0001047",
+      "MRO:0001052",
+      "MRO:0001055",
+      "MRO:0001355",
+      "MRO:0001454",
+      "MRO:0001528",
+      "MRO:0001529",
+      "MRO:0001539",
+      "MRO:0001541",
+      "MRO:0001543",
+      "MRO:0001546",
+      "MRO:0001655",
+      "MRO:0001675"
+    ],
+    "mhc_allele_iris": [
+      "MRO:0001006",
+      "MRO:0001026",
+      "MRO:0001029",
+      "MRO:0001047",
+      "MRO:0001052",
+      "MRO:0001055"
+    ],
+    "mhc_allele_names": [
+      "HLA-A*01:01",
+      "HLA-A*03:01",
+      "HLA-A*11:01",
+      "HLA-A*31:01",
+      "HLA-A*33:01",
+      "HLA-A*68:01"
+    ],
+    "parent_source_antigen_iri_search": [
+      "BFO:0000040",
+      "PR:000000001",
+      "taxon_protein:10002040",
+      "taxon_protein:10002316",
+      "taxon_protein:10239",
+      "taxon_protein:11118",
+      "taxon_protein:2501931",
+      "taxon_protein:2509511",
+      "taxon_protein:2697049",
+      "taxon_protein:694002",
+      "UNIPROT:P0C6X7",
+      "UNIPROT:P0DTD1",
+      "UNIPROT_PRO:0000037318",
+      "UNIPROT_PRO:0000449629"
+    ],
+    "parent_source_antigen_iris": [
+      "UNIPROT:P0C6X7",
+      "UNIPROT:P0DTD1"
+    ],
+    "parent_source_antigen_names": [
+      "Replicase polyprotein 1ab"
+    ],
+    "parent_source_antigen_source_org_iris": [
+      "NCBITaxon:2697049"
+    ],
+    "parent_source_antigen_source_org_names": [
+      "SARS-CoV1",
+      "SARS-CoV2"
+    ],
+    "disease_iri_search": [
+      "DOID:0050117",
+      "DOID:0080599",
+      "DOID:0080600",
+      "DOID:4",
+      "DOID:934",
+      "ONTIE:0003543"
+    ],
+    "disease_iris": [
+      "DOID:0080600"
+    ],
+    "disease_names": [
+      "COVID-19"
+    ],
+    "assay_iri_search": [
+      "OBI:0001317",
+      "OBI:0001553",
+      "OBI:0001564",
+      "OBI:0001988",
+      "OBI:0001989",
+      "OBI:0002075",
+      "OBI:1110037",
+      "OBI:1110124",
+      "OBI:1110126",
+      "OBI:1110179"
+    ],
+    "assay_iris": [
+      "OBI:0001564",
+      "OBI:1110179"
+    ],
+    "assay_names": [
+      "dissociation constant KD (~IC50)|purified MHC/competitive/radioactivity|nM",
+      "qualitative binding|multimer/tetramer"
+    ],
+    "non_peptidic_molecule_iri_search": null,
+    "non_peptidic_molecule_iris": null,
+    "non_peptidic_molecule_names": null,
+    "r_object_source_molecule_iri_search": null,
+    "r_object_source_molecule_iris": null,
+    "r_object_source_molecule_names": null,
+    "r_object_source_organism_iri_search": null,
+    "r_object_source_organism_iris": null,
+    "r_object_source_organism_names": null,
+    "mhc_classes": [
+      "I"
+    ],
+    "mhc_allele_resolutions": [
+      "2 chain"
+    ],
+    "e_related_object_types": null,
+    "tcell_ids": [
+      12493165
+    ],
+    "tcell_iris": [
+      "IEDB_ASSAY:12493165"
+    ],
+    "bcell_ids": null,
+    "bcell_iris": null,
+    "elution_ids": [
+      1025193,
+      1025194,
+      1025195,
+      1025196,
+      1025197
+    ],
+    "elution_iris": [
+      "IEDB_ASSAY:1025193",
+      "IEDB_ASSAY:1025194",
+      "IEDB_ASSAY:1025195",
+      "IEDB_ASSAY:1025196",
+      "IEDB_ASSAY:1025197"
+    ],
+    "journal_names": [
+      "Sci Immunol"
+    ],
+    "reference_types": [
+      "Literature",
+      "Submission"
+    ],
+    "pubmed_ids": [
+      "33853928"
+    ],
+    "reference_titles": [
+      "SARS-CoV-2 genome-wide T cell epitope mapping reveals immunodominance and substantial CD8<sup>+</sup> T cell activation in COVID-19 patients."
+    ],
+    "reference_authors": [
+      "John Sidney; Jason Botten; Benjamin Neuman; Michael Buchmeier; Alessandro Sette",
+      "Sunil Kumar Saini; Ditte Stampe Hersby; Tripti Tamhane; Helle Rus Povlsen; Susana Patricia Amaya Hernandez; Morten Nielsen; Anne Ortved Gang; Sine Reker Hadrup"
+    ],
+    "reference_dates": [
+      "2006",
+      "2021"
+    ]
+  },
+  {
+    "structure_id": 7112,
+    "structure_iri": "IEDB_EPITOPE:7112",
+    "structure_descriptions": [
+      "CTASNKNRGIIKTFSNG"
+    ],
+    "curated_source_antigens": [
+      {
+        "accession": "P12568.1",
+        "name": "Fusion glycoprotein F0 precursor",
+        "iri": "GENPEPT:P12568.1",
+        "starting_position": 422,
+        "ending_position": 438,
+        "source_organism_name": "Human respiratory syncytial virus A strain Long (Human respiratory syncytial virus (subgroup A / strain Long))",
+        "source_organism_iri": "NCBITaxon:11260"
+      }
+    ],
+    "structure_type": "Linear peptide",
+    "linear_sequence": "CTASNKNRGIIKTFSNG",
+    "e_modification": null,
+    "linear_sequence_length": 17,
+    "iedb_assay_ids": [
+      1460917,
+      1461540
+    ],
+    "iedb_assay_iris": [
+      "IEDB_ASSAY:1460917",
+      "IEDB_ASSAY:1461540"
+    ],
+    "reference_ids": [
+      1006421
+    ],
+    "reference_iris": [
+      "IEDB_REFERENCE:1006421"
+    ],
+    "submission_ids": null,
+    "submission_iris": null,
+    "pdb_ids": null,
+    "chebi_ids": null,
+    "qualitative_measures": [
+      "Positive"
+    ],
+    "mhc_allele_evidences": null,
+    "antibody_isotypes": null,
+    "direct_ex_vivo_bool": 0,
+    "receptor_ids": null,
+    "receptor_group_ids": null,
+    "tcr_receptor_group_ids": null,
+    "bcr_receptor_group_ids": null,
+    "receptor_group_iris": null,
+    "tcr_receptor_group_iris": null,
+    "bcr_receptor_group_iris": null,
+    "receptor_types": null,
+    "receptor_names": null,
+    "receptor_chain1_types": null,
+    "receptor_chain2_types": null,
+    "receptor_chain1_full_seqs": null,
+    "receptor_chain2_full_seqs": null,
+    "receptor_chain1_cdr1_seqs": null,
+    "receptor_chain2_cdr1_seqs": null,
+    "receptor_chain1_cdr2_seqs": null,
+    "receptor_chain2_cdr2_seqs": null,
+    "receptor_chain1_cdr3_seqs": null,
+    "receptor_chain2_cdr3_seqs": null,
+    "host_organism_iri_search": [
+      "NCBITaxon:10088",
+      "NCBITaxon:10090",
+      "NCBITaxon:314147",
+      "NCBITaxon:40674",
+      "NCBITaxon:7742"
+    ],
+    "host_organism_iris": null,
+    "host_organism_names": [
+      "Mus musculus BALB/c"
+    ],
+    "source_organism_iri_search": [
+      "NCBITaxon:1",
+      "NCBITaxon:10239",
+      "NCBITaxon:11244",
+      "NCBITaxon:11250",
+      "NCBITaxon:11260",
+      "NCBITaxon:1868215",
+      "NCBITaxon:208893",
+      "OBI:0100026"
+    ],
+    "source_organism_iris": [
+      "NCBITaxon:11260"
+    ],
+    "source_organism_names": [
+      "Human respiratory syncytial virus A strain Long (Human respiratory syncytial virus (subgroup A / strain Long))"
+    ],
+    "mhc_allele_iri_search": null,
+    "mhc_allele_iris": null,
+    "mhc_allele_names": null,
+    "parent_source_antigen_iri_search": [
+      "BFO:0000040",
+      "PR:000000001",
+      "taxon_protein:10002040",
+      "taxon_protein:10239",
+      "taxon_protein:11244",
+      "taxon_protein:11250",
+      "taxon_protein:1868215",
+      "UNIPROT:O36634",
+      "UNIPROT_PRO:0000390376",
+      "UNIPROT_PRO:0000390378"
+    ],
+    "parent_source_antigen_iris": [
+      "UNIPROT:O36634"
+    ],
+    "parent_source_antigen_names": [
+      "Fusion glycoprotein F0"
+    ],
+    "parent_source_antigen_source_org_iris": [
+      "NCBITaxon:11250"
+    ],
+    "parent_source_antigen_source_org_names": [
+      "Human respiratory syncytial virus"
+    ],
+    "disease_iri_search": null,
+    "disease_iris": null,
+    "disease_names": null,
+    "assay_iri_search": [
+      "OBI:0001650",
+      "OBI:0001657",
+      "OBI:0001703",
+      "OBI:1110127"
+    ],
+    "assay_iris": [
+      "OBI:0001650",
+      "OBI:0001657"
+    ],
+    "assay_names": [
+      "qualitative binding|ELISA",
+      "qualitative binding|western blot"
+    ],
+    "non_peptidic_molecule_iri_search": null,
+    "non_peptidic_molecule_iris": null,
+    "non_peptidic_molecule_names": null,
+    "r_object_source_molecule_iri_search": null,
+    "r_object_source_molecule_iris": null,
+    "r_object_source_molecule_names": null,
+    "r_object_source_organism_iri_search": null,
+    "r_object_source_organism_iris": null,
+    "r_object_source_organism_names": null,
+    "mhc_classes": null,
+    "mhc_allele_resolutions": null,
+    "e_related_object_types": null,
+    "tcell_ids": null,
+    "tcell_iris": null,
+    "bcell_ids": [
+      1460917,
+      1461540
+    ],
+    "bcell_iris": [
+      "IEDB_ASSAY:1460917",
+      "IEDB_ASSAY:1461540"
+    ],
+    "elution_ids": null,
+    "elution_iris": null,
+    "journal_names": [
+      "J Gen Virol"
+    ],
+    "reference_types": [
+      "Literature"
+    ],
+    "pubmed_ids": [
+      "1383404"
+    ],
+    "reference_titles": [
+      "Characterization of two antigenic sites recognized by neutralizing monoclonal antibodies directed against the fusion glycoprotein of human respiratory syncytial virus."
+    ],
+    "reference_authors": [
+      "J Arbiza; G Taylor; J A López; J Furze; S Wyld; P Whyte; E J Stott; G Wertz; W Sullender; M Trudel; et al."
+    ],
+    "reference_dates": [
+      "1992"
+    ]
+  }
+]
