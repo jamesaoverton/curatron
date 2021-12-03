@@ -6,7 +6,10 @@ import requests
 from argparse import ArgumentParser
 from collections import defaultdict
 
-QUERY_URL = "https://query-api.iedb.org"
+# Max number of elements in list for querying (in.(...))
+CHUNK_SIZE = 354
+
+# Output files and corresponding tables
 OUTPUTS = {
     "tcell": [
         {"key": "tcell_ids", "table": "tcell_search", "id": "tcell_id"},
@@ -20,10 +23,15 @@ OUTPUTS = {
     ],
 }
 
+# API URL
+QUERY_URL = "https://query-api.iedb.org"
+
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument("reference_id", help="One or more space-separated reference IDs to fetch", nargs="+")
+    parser.add_argument(
+        "reference_id", help="One or more space-separated reference IDs to fetch", nargs="+"
+    )
     parser.add_argument("-v", "--verbose", help="Run with increased logging", action="store_true")
     args = parser.parse_args()
 
@@ -48,8 +56,8 @@ def main():
                 id_field = sd["id"]
                 logging.info("Querying " + table)
 
-                # Partition into sublists of max 354 (502 error when we hit 355 items)
-                chunks = [ids[x : x + 354] for x in range(0, len(ids), 354)]
+                # Partition into sublists of max CHUNK_SIZE to prevent 502 error
+                chunks = [ids[x : x + CHUNK_SIZE] for x in range(0, len(ids), CHUNK_SIZE)]
                 for chunk in chunks:
                     q = f"{QUERY_URL}/{table}?{id_field}=in.({','.join([str(x) for x in chunk])})"
                     r = requests.get(q)
