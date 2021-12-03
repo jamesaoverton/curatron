@@ -1,0 +1,25 @@
+table	column	nulltype	datatype	structure	description
+table	table		table_name	primary	name of this table
+table	path		path		path to the TSV file for this table, relative to the table.tsv file
+table	type	empty	table_type		type of this table, used for tables with special meanings
+table	description	empty	description		a description of this table
+column	table		table_name	from(table.table) primary	the table that this column belongs to
+column	column		column_name	primary	the name of this column
+column	datatype		datatype_name	from(datataype.datatype)	the datatype for this column
+column	nulltype	empty	datatype_name	from(datataype.datatype)	the datatype for NULL values in this column
+column	structure	empty	trimmed_line		schema information for this column
+column	description	empty	description		a description of this column
+datatype	datatype		datatype_name	primary	the name of this datatype
+datatype	parent	empty	datatype_name	tree(datatype.datatype)	the parent datatype
+datatype	condition	empty	datatype_condition		
+prefix	prefix		prefix	primary	
+prefix	base		IRI	primary	
+prefix	ontology IRI	empty	IRI		
+prefix	version IRI	empty	IRI		
+reference	reference_id		integer	primary	
+epitope	structure_id		integer	primary	
+tcell	tcell_id		integer	primary	
+bcell	bcell_id		integer	primary	
+mhc	elution_id		integer	primary	
+tcr	receptor_group_id		integer	primary	
+bcr	receptor_group_id		integer	primary	
