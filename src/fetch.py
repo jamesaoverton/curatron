@@ -45,7 +45,6 @@ def main():
                 if file not in outputs:
                     outputs[file] = list()
                 table = sd["table"]
-
                 id_field = sd["id"]
                 logging.info("Querying " + table)
 
