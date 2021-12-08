@@ -1,0 +1,9 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="container">
+    {{ tree|safe }}
+    <div class="fixed-bottom" style="padding-bottom:10px; padding-left:10px"><a href="/browse">View all trees</a></div>
+</div>
+
+{% endblock %}

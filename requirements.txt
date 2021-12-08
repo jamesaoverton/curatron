@@ -1,2 +1,4 @@
 Flask
+ontodev-gizmos
 requests
+SQLAlchemy
