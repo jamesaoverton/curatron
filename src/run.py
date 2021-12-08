@@ -37,6 +37,9 @@ def list_trees():
 
 @app.route("/browse/<tree>")
 def show_tree(tree):
+    if tree == "style.css":
+        # Do nothing - workaround for unknown stylesheet
+        return render_template("template.html")
     conn = create_connection(tree)
     fmt = request.args.get("format")
     if fmt and fmt == "json":
@@ -57,6 +60,9 @@ def show_tree(tree):
 
 @app.route("/browse/<tree>/<term>")
 def show_term(tree, term):
+    if tree == "style.css":
+        # Do nothing - workaround for unknown stylesheet
+        return render_template("template.html")
     conn = create_connection(tree)
     fmt = request.args.get("format")
     if fmt and fmt == "json":
