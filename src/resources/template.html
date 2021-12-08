@@ -33,6 +33,8 @@
 	</style>
 </head>
 <body>
-  {{ content }}
+	{% block content %}
+	{{ default|safe }}
+	{% endblock %}
 </body>
 </html>
