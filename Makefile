@@ -86,3 +86,7 @@ build/ref_$(REFID)/table.tsv: src/generate.py | build/ref_$(REFID)/
 build/ref_$(REFID)/reference.tsv: src/convert.py build/ref_$(REFID)/table.tsv
 	$^
 
+build/ref_$(REFID)/reference.db: src/load.py src/validate.py build/ref_$(REFID)/table.tsv build/ref_$(REFID)/reference.tsv| build/ref_$(REFID)/
+	sqlite3 $@ "VACUUM;"
+	python3 $< $@ $(word 3,$^)
+
