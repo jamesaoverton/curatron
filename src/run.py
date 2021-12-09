@@ -27,7 +27,7 @@ TREES = [
 
 @app.route("/")
 def index():
-    return render_template("template.html", default="Hello")
+    return render_template("index.html", default="Hello")
 
 
 @app.route("/browse")
@@ -86,7 +86,8 @@ def create_connection(tree):
 
 
 def main():
-    CGIHandler().run(app)
+    #CGIHandler().run(app)
+    app.run(port=5002, debug=True)
 
 
 if __name__ == "__main__":

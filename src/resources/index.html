@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="container">
+    <h1>IEDB New Curation Demo</h1>
+    <ol>
+        <li>IEDB API (PostgREST)<ul>
+            <li><a href="https://query-api.iedb.org/docs/swagger/#/">Swagger</a></li>
+            <li><a href="https://query-api.iedb.org/reference_search?reference_id=eq.1037960">Example JSON</a></li>
+        </ul>
+        </li>
+        <li><a href="https://github.com/ontodev/sprocket">Sprocket</a><ul>
+            <li><a href="http://localhost:5001">IEDB API tables</a></li>
+            <li><a href="http://localhost:5001/reference_search">reference_search</a></li>
+            <li><a href="http://localhost:5001/reference_search?reference_id=eq.1037960&amp;limit=1">reference 1037960</a></li>
+        </ul>
+        </li>
+        <li>Fetch reference: JSONs, TSVs</li>
+        <li>Validate<ul>
+            <li><a href="https://docs.google.com/spreadsheets/d/1oy2NSxb6er3-QQ7bZMKqSpOOVSCAeg7qPII-VD2ahk8/edit#gid=0">Google Sheet</a></li>
+            <li>Sprocket with highlighting</li>
+        </ul>
+        </li>
+        <li>TODO: HTML Forms</li>
+        <li>Excel: download, upload</li>
+        <li><a href="/browse">Tree browsers</a></li>
+        <li>TODO: New term requests</li>
+        <li>TODO: (Re)Submission</li>
+    </ol>
+</div>
+
+{% endblock %}

@@ -18,4 +18,4 @@ table_type	word	lowercase	in('table', 'column', 'datatype')		a table type
 prefix	word				a prefix for a CURIE			
 suffix	word				a suffix for a CURIE			
 CURIE	word		search(/:/)	concat(prefix, ":", suffix)	a Compact URI		CURIE	
-integer	word		match(/\d+/)		a non-negative integer	INT	xsd:integer	
+integer	word		match(/\d+/)		a non-negative integer	INTEGER	xsd:integer	

@@ -38,11 +38,16 @@ def main():
                 writer = csv.DictWriter(outfile, rows.fieldnames, delimiter="\t", lineterminator="\n")
                 writer.writeheader()
                 for row in rows:
+                    if "path" in row:
+                        row["path"] = os.path.join(args.dir, row["path"])
                     if row["table"] in tables:
                         writer.writerow(row)
 
     path = os.path.join(args.dir, "datatype.tsv")
     copy2("src/resources/datatype.tsv", path)
+
+    path = os.path.join(args.dir, "prefix.tsv")
+    copy2("src/resources/prefix.tsv", path)
 
 if __name__ == "__main__":
     main()

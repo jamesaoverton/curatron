@@ -1,6 +1,25 @@
 ### Workflow
 #
-# - `./src/run.py` run.py
+# 1. IEDB API (PostgREST)
+#   - [Swagger](https://query-api.iedb.org/docs/swagger/#/)
+#   - [Example JSON](https://query-api.iedb.org/reference_search?reference_id=eq.1037960)
+# 2. [Sprocket](https://github.com/ontodev/sprocket)
+#   - [IEDB API tables](http://localhost:5001)
+#   - [reference_search](http://localhost:5001/reference_search)
+#   - [reference 1037960](http://localhost:5001/reference_search?reference_id=eq.1037960&limit=1)
+# 3. Fetch reference: JSONs, TSVs
+# 4. Validate
+#   - [Google Sheet](https://docs.google.com/spreadsheets/d/1oy2NSxb6er3-QQ7bZMKqSpOOVSCAeg7qPII-VD2ahk8/edit#gid=0)
+#   - Sprocket with highlighting
+# 5. HTML Forms
+# 6. Excel: download, upload
+# 7. Tree pages
+# 8. New term requests
+# 9. (Re)Submission
+
+REFID := 1037960
+
+all: build/ref_$(REFID)/table.tsv
 
 build:
 	mkdir -p $@
@@ -29,10 +48,13 @@ src/resources/column.tsv:
 src/resources/datatype.tsv:
 	curl -L -o $@ "$(GSURL)export?format=tsv&gid=1518754913"
 
+src/resources/prefix.tsv:
+	curl -L -o $@ "$(GSURL)export?format=tsv&gid=1105305212"
+
 .PHONY: update-meta-tables
 update-meta-tables:
 	rm -f src/resources/*.tsv
-	make src/resources/table.tsv src/resources/column.tsv src/resources/datatype.tsv
+	make src/resources/table.tsv src/resources/column.tsv src/resources/datatype.tsv src/resources/prefix.tsv
 
 ### Tree Browser
 
@@ -51,3 +73,16 @@ build/%.db: src/prefixes.sql build/%.owl | build/rdftab
 	sqlite3 $@ "CREATE INDEX idx_object ON statements (object);"
 	sqlite3 $@ "CREATE INDEX idx_value ON statements (value);"
 	sqlite3 $@ "ANALYZE;"
+
+
+
+build/ref_$(REFID)/: src/fetch.py | build/
+	mkdir $@
+	$< $(REFID)
+
+build/ref_$(REFID)/table.tsv: src/generate.py | build/ref_$(REFID)/
+	$< $|
+
+build/ref_$(REFID)/reference.tsv: src/convert.py build/ref_$(REFID)/table.tsv
+	$^
+
