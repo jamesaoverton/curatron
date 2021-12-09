@@ -143,6 +143,8 @@ def validate_condition(condition, value):
         return bool(re.fullmatch(r"\w+", value))
     elif condition == r"match(/\d+/)":
         return bool(re.fullmatch(r"\d+", value))
+    elif condition == r"match(/[ACDEFGHIKLMNPQRSTVWXY]+/)":
+        return bool(re.fullmatch(r"[ACDEFGHIKLMNPQRSTVWXY]+", value))
     elif condition == r"search(/:/)":
         return ":" in value
     else:

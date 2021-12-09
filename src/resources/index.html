@@ -3,26 +3,41 @@
 <div class="container">
     <h1>IEDB New Curation Demo</h1>
     <ol>
-        <li>IEDB API (PostgREST)<ul>
+        <li>IEDB Production
+          <ul>
+            <li><a href="https://iedb.org/reference/1037960">Reference 1037960</a></li>
+          </ul>
+        </li>
+        <li>IEDB API (PostgREST)
+          <ul>
             <li><a href="https://query-api.iedb.org/docs/swagger/#/">Swagger</a></li>
             <li><a href="https://query-api.iedb.org/reference_search?reference_id=eq.1037960">Example JSON</a></li>
-        </ul>
+          </ul>
         </li>
-        <li><a href="https://github.com/ontodev/sprocket">Sprocket</a><ul>
+        <li><a href="https://github.com/ontodev/sprocket">Sprocket</a>
+          <ul>
             <li><a href="http://localhost:5001">IEDB API tables</a></li>
             <li><a href="http://localhost:5001/reference_search">reference_search</a></li>
             <li><a href="http://localhost:5001/reference_search?reference_id=eq.1037960&amp;limit=1">reference 1037960</a></li>
-        </ul>
+          </ul>
         </li>
-        <li>Fetch reference: JSONs, TSVs</li>
-        <li>Validate<ul>
-            <li><a href="https://docs.google.com/spreadsheets/d/1oy2NSxb6er3-QQ7bZMKqSpOOVSCAeg7qPII-VD2ahk8/edit#gid=0">Google Sheet</a></li>
-            <li>Sprocket with highlighting</li>
-        </ul>
+        <li>Fetch reference as JSONs, convert to TSVs</li>
+        <li>Validate
+          <ul>
+            <li><a href="http://localhost:5003">Reference 1037960 tables</a></li>
+            <li><a href="http://localhost:5003/tcell">Reference 1037960 tcell</a></li>
+            <li><a href="http://localhost:5003/tcell?tcell_id=eq.12493165&limit=1">tcell 12493165</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1oy2NSxb6er3-QQ7bZMKqSpOOVSCAeg7qPII-VD2ahk8/edit#gid=0">validation configuration Google Sheet</a></li>
+          </ul>
         </li>
-        <li>TODO: HTML Forms</li>
-        <li>Excel: download, upload</li>
-        <li><a href="/browse">Tree browsers</a></li>
+        <li>Edit with HTML Forms (TODO)</li>
+        <li>Edit with Excel
+          <ul>
+            <li>download</li>
+            <li>edit using <a href="/browse">finders</a></li>
+            <li>upload, GOTO 5</li>
+          </ul>
+        </li>
         <li>TODO: New term requests</li>
         <li>TODO: (Re)Submission</li>
     </ol>

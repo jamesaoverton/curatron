@@ -19,3 +19,4 @@ prefix	word				a prefix for a CURIE
 suffix	word				a suffix for a CURIE			
 CURIE	word		search(/:/)	concat(prefix, ":", suffix)	a Compact URI		CURIE	
 integer	word		match(/\d+/)		a non-negative integer	INTEGER	xsd:integer	
+protein_sequence	word		match(/[ACDEFGHIKLMNPQRSTVWXY]+/)		a protein sequence			

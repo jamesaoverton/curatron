@@ -17,9 +17,25 @@ prefix	base		IRI
 prefix	ontology IRI	empty	IRI		
 prefix	version IRI	empty	IRI		
 reference	reference_id		integer	primary	
+reference	reference_title		trimmed_line		
+reference	reference_author		trimmed_line		
 reference	journal_name	empty	trimmed_line		
+reference	reference_date		integer		
+reference	pubmed_id		integer		
 epitope	structure_id		integer	primary	
+epitope	linear_sequence		protein_sequence		
+epitope	structure_type		trimmed_line		
+epitope	host_organism_iris		trimmed_line		
+epitope	host_organism_names		trimmed_line		
 tcell	tcell_id		integer	primary	
+tcell	reference_id		integer		
+tcell	structure_id		integer		
+tcell	linear_sequence		protein_sequence		
+tcell	structure_type		trimmed_line		
+tcell	immunization_description		trimmed_line		
+tcell	antigen_description		trimmed_line		
+tcell	mhc_restriction		trimmed_line		
+tcell	qualitative_measure		word		
 bcell	bcell_id		integer	primary	
 mhc	elution_id		integer	primary	
 tcr	receptor_group_id		integer	primary	
