@@ -86,7 +86,15 @@ build/ref_$(REFID)/table.tsv: src/generate.py | build/ref_$(REFID)/
 build/ref_$(REFID)/reference.tsv: src/convert.py build/ref_$(REFID)/table.tsv
 	$^
 
-build/ref_$(REFID)/reference.db: src/load.py src/validate.py build/ref_$(REFID)/table.tsv build/ref_$(REFID)/reference.tsv| build/ref_$(REFID)/
+build/ref_$(REFID)/reference.db: src/load.py src/validate.py build/ref_$(REFID)/table.tsv build/ref_$(REFID)/reference.tsv | build/ref_$(REFID)/
 	sqlite3 $@ "VACUUM;"
 	python3 $< $@ $(word 3,$^)
 
+build/ref_$(REFID)/reference.xlsx: build/ref_$(REFID)/reference.tsv
+	cd build/ref_$(REFID)/ && \
+	rm -rf .axle/ && \
+	axle init reference && \
+	axle add reference.tsv && \
+	axle add epitope.tsv && \
+	axle add tcell.tsv && \
+	axle push
