@@ -42,7 +42,7 @@ def main():
         logging.info(f"Retrieving data for reference ID {ref_id}")
         r = requests.get(f"{QUERY_URL}/reference_search?reference_id=eq.{ref_id}")
         data = r.json()[0]
-        with open(f"build/ref:{ref_id}/reference.json", "w") as f:
+        with open(f"build/ref_{ref_id}/reference.json", "w") as f:
             f.write(json.dumps(data, indent=4))
 
         outputs = defaultdict(list)
@@ -64,11 +64,11 @@ def main():
                 table_data = r.json()
                 outputs[file].extend(table_data)
 
-        if not os.path.exists(f"build/ref:{ref_id}"):
-            os.makedirs(f"build/ref:{ref_id}")
+        if not os.path.exists(f"build/ref_{ref_id}"):
+            os.makedirs(f"build/ref_{ref_id}")
         for file, contents in outputs.items():
             if contents:
-                with open(f"build/ref:{ref_id}/{file}.json", "w") as f:
+                with open(f"build/ref_{ref_id}/{file}.json", "w") as f:
                     f.write(json.dumps(contents, indent=4))
 
 

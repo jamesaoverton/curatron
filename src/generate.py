@@ -19,7 +19,7 @@ def main():
     reference = None
     path = os.path.join(args.dir, "reference.json")
     with open(path) as f:
-        reference = json.load(f)[0]
+        reference = json.load(f)
 
     tables = ["table", "column", "datatype", "prefix", "reference"]
     for table, value in OUTPUTS.items():

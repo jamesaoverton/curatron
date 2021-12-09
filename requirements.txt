@@ -2,3 +2,4 @@ Flask
 ontodev-gizmos
 requests
 SQLAlchemy
+git+https://github.com/ontodev/sprocket.git
