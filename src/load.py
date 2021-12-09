@@ -18,6 +18,8 @@ CHUNK_SIZE = 2
 # TODO include synonyms?
 sqlite_types = ["text", "integer", "real", "blob"]
 
+special_table_types = ["table", "column", "datatype"]
+
 
 def read_config_files(table_table_path):
     """Given the path to a table TSV file, load and check the special 'table', 'column', and
@@ -32,7 +34,6 @@ def read_config_files(table_table_path):
                 raise Exception(f"No rows in {path}")
             return rows
 
-    special_table_types = ["table", "column", "datatype"]
     path = table_table_path
     rows = read_tsv(path)
     config = {"table": {}, "datatype": {}, "special": {}}

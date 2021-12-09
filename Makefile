@@ -75,7 +75,6 @@ build/%.db: src/prefixes.sql build/%.owl | build/rdftab
 	sqlite3 $@ "ANALYZE;"
 
 
-
 build/ref_$(REFID)/: src/fetch.py | build/
 	mkdir $@
 	$< $(REFID)
@@ -90,11 +89,15 @@ build/ref_$(REFID)/reference.db: src/load.py src/validate.py build/ref_$(REFID)/
 	sqlite3 $@ "VACUUM;"
 	python3 $< $@ $(word 3,$^)
 
-build/ref_$(REFID)/reference.xlsx: build/ref_$(REFID)/reference.tsv
+build/ref_$(REFID)/message.tsv: src/save.py build/ref_$(REFID)/reference.db
+	python $^
+
+build/ref_$(REFID)/reference.xlsx: build/ref_$(REFID)/reference.tsv build/ref_$(REFID)/message.tsv
 	cd build/ref_$(REFID)/ && \
 	rm -rf .axle/ && \
 	axle init reference && \
 	axle add reference.tsv && \
 	axle add epitope.tsv && \
 	axle add tcell.tsv && \
+	axle apply message.tsv && \
 	axle push
